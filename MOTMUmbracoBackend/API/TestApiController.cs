@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using Umbraco.Web.WebApi;
+using Umbraco.Core.Models;
 
 namespace MOTMUmbracoBackend.Controllers
 {
     public class TestApiController : UmbracoApiController
     {
-        // GET: Club
+        // GET: Club by club id
         [HttpGet] 
         public Club GetClub(int cID)
         {
@@ -46,7 +47,7 @@ namespace MOTMUmbracoBackend.Controllers
             }
         }
 
-        //GET: Team
+        //GET: Team by team id
         public Team GetTeam(int tID)
         {
             var cs = Services.ContentService;
@@ -62,6 +63,41 @@ namespace MOTMUmbracoBackend.Controllers
             {
                 return new Team();
             }
+        }
+
+        // Get all teams from club by club id
+        public List<Team> GetTeams(int cID)
+        {
+            var cs = Services.ContentService;
+            List<Team> teamlist = new List<Team>();
+            var teams = cs.GetById(cID).Children().Where(t => t.ContentType.Alias.Equals("team"));
+                foreach (var team in teams)
+                {
+                    var t = new Team();
+                    t.Id = team.Id;
+                    t.TeamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+                    teamlist.Add(t);
+                }
+                return teamlist;            
+        }
+
+       // Get players by team id
+       public List<Player> GetPlayers(int tID)
+        {
+            var cs = Services.ContentService;
+            List<Player> playerlist = new List<Player>();
+            var players = cs.GetById(tID).Children().Where(t => t.ContentType.Alias.Equals("player"));
+            foreach (var player in players)
+            {
+                var p = new Player();
+                p.Id = player.Id;
+                p.playerFirstName = (player.Properties["playerFirstName"].Value != null) ? player.Properties["playerFirstName"].Value.ToString() : "Player first name";
+                p.playerLastName = (player.Properties["playerLastName"].Value != null) ? player.Properties["playerLastName"].Value.ToString() : "Player last name";
+                p.playerNumber = (player.Properties["playerNumber"].Value != null) ? int.Parse(player.Properties["playerNumber"].Value.ToString()) : 0;
+                //p.playerNumber = int.Parse(player.Properties["playerNumber"].Value.ToString());
+                playerlist.Add(p);
+            }
+            return playerlist;
         }
 
         private string getImg(string guidString)
@@ -88,6 +124,14 @@ namespace MOTMUmbracoBackend.Controllers
         {
             public int Id { get; set; }
             public string TeamName { get; set; }
+        }
+
+        public class Player
+        {
+            public int Id { get; set; }
+            public string playerFirstName { get; set; }
+            public string playerLastName { get; set; }
+            public int playerNumber { get; set; }
         }
     }
 }
