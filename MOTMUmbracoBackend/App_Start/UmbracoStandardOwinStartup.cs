@@ -69,19 +69,22 @@ namespace MOTMUmbracoBackend
              *      
              * If you want to have a custom CORS policy for the token server you can provide
              * a custom CORS policy, example: 
-             * 
-             *      app.UseUmbracoBackOfficeTokenAuth(
-             *          new BackOfficeAuthServerProviderOptions()
-             *              {
-             *             		//Modify the CorsPolicy as required
-             *                  CorsPolicy = new CorsPolicy()
-             *                  {
-             *                      AllowAnyHeader = true,
-             *                      AllowAnyMethod = true,
-             *                      Origins = { "http://mywebsite.com" }                
-             *                  }
-             *              });
              */
+            //app.UseUmbracoBackOfficeTokenAuth(new BackOfficeAuthServerProviderOptions());
+
+            //app.UseUmbracoBackOfficeTokenAuth(
+            //           new BackOfficeAuthServerProviderOptions()
+            //               {
+            //              		//Modify the CorsPolicy as required
+            //                   CorsPolicy = new CorsPolicy()
+            //                   {
+            //                       AllowAnyHeader = true,
+            //                       AllowAnyMethod = true,
+            //                       //Origins = { "http://mywebsite.com" }
+            //                       AllowAnyOrigin = true
+            //                   }
+            //               });
+             
 
         }
     }
