@@ -162,7 +162,7 @@ namespace MOTMUmbracoBackend.Controllers
         //Post team in club
         [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
-        public HttpResponseMessage PostTeam([FromBody] Team data, int cID)
+        public Team PostTeam([FromBody] Team data, int cID)
         {
             var cs = Services.ContentService;
 
@@ -175,7 +175,8 @@ namespace MOTMUmbracoBackend.Controllers
                 TeamName = newTeam.Name
             };
             //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + newTeam.Id.ToString() + " TeamName: " + newTeam.Name);
-            return Request.CreateResponse<String>(HttpStatusCode.OK, (JsonConvert.SerializeObject(createdTeam)));
+            //return Request.CreateResponse<String>(HttpStatusCode.OK, (JsonConvert.SerializeObject(createdTeam)));
+            return createdTeam;
         }
 
         //HELPER METHODS
