@@ -159,7 +159,7 @@ namespace MOTMUmbracoBackend.Controllers
             Services.ContentService.CreateContent(t.clubName, 1083, "Club");
         }
 
-        //Post team in club
+        //Post team in club - OK
         [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
         public Team PostTeam([FromBody] Team data, int cID)
@@ -177,6 +177,46 @@ namespace MOTMUmbracoBackend.Controllers
             //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + newTeam.Id.ToString() + " TeamName: " + newTeam.Name);
             //return Request.CreateResponse<String>(HttpStatusCode.OK, (JsonConvert.SerializeObject(createdTeam)));
             return createdTeam;
+        }
+
+        //Update team with team id - OK
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpPut]
+        public object UpdateTeam([FromBody] Team data, int tID)
+        {
+            if (tID != 0)
+            {
+                var cs = Services.ContentService;
+                var currentTeam = cs.GetById(tID);
+                currentTeam.SetValue("teamName", data.TeamName);
+                currentTeam.Name = data.TeamName; //the umbraco document name!!
+                cs.SaveAndPublishWithStatus(currentTeam);
+                return currentTeam;
+            }
+            else
+            {
+                return new HttpError();
+            }
+        }
+
+        //Move team to recyclebin with team id - OK
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpDelete]
+        public object DeleteTeam(int tID)
+        {
+            var cs = Services.ContentService;
+            var currentTeam = cs.GetById(tID);
+            cs.MoveToRecycleBin(currentTeam);
+            //cs.SaveAndPublishWithStatus(currentTeam);
+
+            //Team updatedTeam = new Team
+            //{
+            //    TeamId = currentTeam.Id,
+            //    TeamName = currentTeam.Name
+            //};
+
+            //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + currentTeam.Id.ToString() + " TeamName: " + currentTeam.Name);
+            return currentTeam;
         }
 
         //HELPER METHODS
