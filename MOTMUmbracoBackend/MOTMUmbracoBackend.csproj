@@ -323,6 +323,11 @@
     <Compile Include="App_Start\UmbracoStandardOwinStartup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestApiController.cs" />
+    <Compile Include="Models\Club.cs" />
+    <Compile Include="Models\Match.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Sponsor.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -424,7 +429,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\TestApi\" />
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net;
 using System.Text;
+using MOTMUmbracoBackend.Models;
 
 namespace MOTMUmbracoBackend.Controllers
 {
@@ -25,7 +26,7 @@ namespace MOTMUmbracoBackend.Controllers
             if (club != null)
             {
                 var c = new Club();
-                c.ClubId = club.Id;
+                c.clubId = club.Id;
                 c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
                 c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
                 c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
@@ -62,7 +63,7 @@ namespace MOTMUmbracoBackend.Controllers
             if (team !=null)
             {
                 var t = new Team();
-                t.TeamId = team.Id;
+                t.teamId = team.Id;
                 t.TeamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
                 return t;
             }
@@ -83,7 +84,7 @@ namespace MOTMUmbracoBackend.Controllers
                 foreach (var team in teams)
                 {
                     var t = new Team();
-                    t.TeamId = team.Id;
+                    t.teamId = team.Id;
                     t.TeamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
                     teamlist.Add(t);
                 }
@@ -103,11 +104,11 @@ namespace MOTMUmbracoBackend.Controllers
                 var p = new Player();
                 var t = new Team();
                 t = GetPlayerTeam(player.Properties["team"].Value.ToString());
-                p.PlayerId = player.Id;
+                p.playerId = player.Id;
                 p.playerFirstName = (player.Properties["playerFirstName"].Value != null) ? player.Properties["playerFirstName"].Value.ToString() : "Player first name";
                 p.playerLastName = (player.Properties["playerLastName"].Value != null) ? player.Properties["playerLastName"].Value.ToString() : "Player last name";
                 p.playerNumber = (player.Properties["playerNumber"].Value != null) ? int.Parse(player.Properties["playerNumber"].Value.ToString()) : 0;
-                p.teamId = t.TeamId;
+                p.teamId = t.teamId;
                 p.teamName = t.TeamName;
                 playerlist.Add(p);
             }
@@ -123,7 +124,7 @@ namespace MOTMUmbracoBackend.Controllers
             foreach (var club in clubs)
             {
                 var c = new Club();
-                c.ClubId = club.Id;
+                c.clubId = club.Id;
                 c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
                 c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
                 c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
@@ -171,7 +172,7 @@ namespace MOTMUmbracoBackend.Controllers
             cs.SaveAndPublishWithStatus(newTeam);
             Team createdTeam = new Team
             {
-                TeamId = newTeam.Id,
+                teamId = newTeam.Id,
                 TeamName = newTeam.Name
             };
             //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + newTeam.Id.ToString() + " TeamName: " + newTeam.Name);
@@ -239,38 +240,10 @@ namespace MOTMUmbracoBackend.Controllers
             var nodeId = cs.GetById(nodeGuid);
             var team = new Team
             {
-                TeamId = Umbraco.Content(nodeId.Id).Id,
+                teamId = Umbraco.Content(nodeId.Id).Id,
                 TeamName = Umbraco.Content(nodeId.Id).Name
             };
             return team;
-        }
-
-        //CLASSES
-        public class Club
-        {
-            public int ClubId { get; set; }
-            public string clubName { get; set; }
-            public string clubAddress { get; set; }
-            public string clubCity { get; set; }
-            public string clubLogo { get; set; }
-            public string clubImage { get; set; }
-            
-        }
-
-        public class Team
-        {
-            public int TeamId { get; set; }
-            public string TeamName { get; set; }
-        }
-
-        public class Player
-        {
-            public int PlayerId { get; set; }
-            public string playerFirstName { get; set; }
-            public string playerLastName { get; set; }
-            public int playerNumber { get; set; }
-            public int teamId { get; set; }
-            public string teamName { get; set; }
         }
     }
 }
