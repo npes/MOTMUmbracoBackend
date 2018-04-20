@@ -64,7 +64,7 @@ namespace MOTMUmbracoBackend.Controllers
             {
                 var t = new Team();
                 t.teamId = team.Id;
-                t.TeamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+                t.teamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
                 return t;
             }
             else
@@ -85,7 +85,7 @@ namespace MOTMUmbracoBackend.Controllers
                 {
                     var t = new Team();
                     t.teamId = team.Id;
-                    t.TeamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+                    t.teamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
                     teamlist.Add(t);
                 }
                 return teamlist;            
@@ -109,13 +109,13 @@ namespace MOTMUmbracoBackend.Controllers
                 p.playerLastName = (player.Properties["playerLastName"].Value != null) ? player.Properties["playerLastName"].Value.ToString() : "Player last name";
                 p.playerNumber = (player.Properties["playerNumber"].Value != null) ? int.Parse(player.Properties["playerNumber"].Value.ToString()) : 0;
                 p.teamId = t.teamId;
-                p.teamName = t.TeamName;
+                p.teamName = t.teamName;
                 playerlist.Add(p);
             }
             return playerlist;
         }
 
-        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        //[Umbraco.Web.WebApi.UmbracoAuthorize]
         public List<Club> GetAllClubs (int rootID)
         {
             var cs = Services.ContentService;
@@ -148,7 +148,54 @@ namespace MOTMUmbracoBackend.Controllers
             }
             return allClubs;
         }
+        //get all teams by sport with currentmatches
+        public List<Team> GetTeamsBySport(int rootID)
+        {
+            var cs = Services.ContentService;
+            List<Team> allTeams = new List<Team>();
+            var teams = cs.GetById(rootID).Descendants().Where(t => t.ContentType.Alias.Equals("team"));
 
+            foreach (var team in teams)
+            {
+                var t = new Team();
+                t.teamId = team.Id;
+                t.teamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+
+                var sportsType = (team.Properties["teamSport"].Value != null) ? team.Properties["teamSport"].Value.ToString() : "teamSport";
+                t.teamSport = Umbraco.GetPreValueAsString(int.Parse(sportsType));
+
+                t.teamMatches = GetMatchByTeamID(team.Id);
+
+                allTeams.Add(t);
+            }
+            return allTeams;
+        }
+        //Get matches by team ID
+        public List<Match> GetMatchByTeamID(int tID)
+        {
+            var cs = Services.ContentService;
+            List<Match> matchlist = new List<Match>();
+            var matches = cs.GetById(tID).Descendants().Where(t => t.ContentType.Alias.Equals("match"));
+
+
+            foreach (var match in matches)
+            {
+                var m = new Match();
+                m.matchId = match.Id;
+                m.matchAddress = (match.Properties["matchAddress"].Value != null) ? match.Properties["matchAddress"].Value.ToString() : "Match Address";
+                m.matchCity = (match.Properties["matchCity"].Value != null) ? match.Properties["matchCity"].Value.ToString() : "Match City";
+                m.matchStartDateTime = (match.Properties["matchStartDateTime"].Value != null) ? match.Properties["matchStartDateTime"].Value.ToString() : "Match Start DateTime";
+                m.opponent = (match.Properties["opponent"].Value != null) ? match.Properties["opponent"].Value.ToString() : "Opponent";
+                m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
+                m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
+
+                var matchStatus = (match.Properties["status"].Value != null) ? match.Properties["status"].Value.ToString() : "Status";
+                m.status = Umbraco.GetPreValueAsString(int.Parse(matchStatus));
+
+                matchlist.Add(m);
+            }
+            return matchlist;
+        }
 
         //POST METHODS
 
@@ -167,13 +214,13 @@ namespace MOTMUmbracoBackend.Controllers
         {
             var cs = Services.ContentService;
 
-            var newTeam = cs.CreateContent(data.TeamName, cID, "Team");
+            var newTeam = cs.CreateContent(data.teamName, cID, "Team");
             //NewTeam.SetValue("teamName", data.TeamName); //populate value
             cs.SaveAndPublishWithStatus(newTeam);
             Team createdTeam = new Team
             {
                 teamId = newTeam.Id,
-                TeamName = newTeam.Name
+                teamName = newTeam.Name
             };
             //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + newTeam.Id.ToString() + " TeamName: " + newTeam.Name);
             //return Request.CreateResponse<String>(HttpStatusCode.OK, (JsonConvert.SerializeObject(createdTeam)));
@@ -189,8 +236,8 @@ namespace MOTMUmbracoBackend.Controllers
             {
                 var cs = Services.ContentService;
                 var currentTeam = cs.GetById(tID);
-                currentTeam.SetValue("teamName", data.TeamName);
-                currentTeam.Name = data.TeamName; //the umbraco document name!!
+                currentTeam.SetValue("teamName", data.teamName);
+                currentTeam.Name = data.teamName; //the umbraco document name!!
                 cs.SaveAndPublishWithStatus(currentTeam);
                 return currentTeam;
             }
@@ -241,7 +288,7 @@ namespace MOTMUmbracoBackend.Controllers
             var team = new Team
             {
                 teamId = Umbraco.Content(nodeId.Id).Id,
-                TeamName = Umbraco.Content(nodeId.Id).Name
+                teamName = Umbraco.Content(nodeId.Id).Name
             };
             return team;
         }
