@@ -672,17 +672,6 @@ Umbraco.Web.Editors.MediaController, umbraco, Version=1.0.6669.13658, Culture=ne
 
 Umbraco.Core.Models.PublishedContent.PublishedContentModel
 
-Umbraco.Web.PublishedContentModels.Club, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.File, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Folder, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Image, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Match, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Member, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.MemberRoles, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Player, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Sponsor, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Team, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Umbraco.Web.PublishedContentModels.Vote, Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Core.PropertyEditors.IParameterEditor
 

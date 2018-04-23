@@ -18,11 +18,52 @@ namespace MOTMUmbracoBackend.Controllers
     {
 
         // GET: Club by club id OK
-        [HttpGet] 
+        //[HttpGet] 
+        //public Club GetClub(int cID)
+        //{
+        //    var cs = Services.ContentService;
+        //    var club = cs.GetById(cID);
+        //    if (club != null)
+        //    {
+        //        var c = new Club();
+        //        c.clubId = club.Id;
+        //        c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
+        //        c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
+        //        c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
+        //        try
+        //        {
+        //            c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
+        //        }
+        //        catch
+        //        {
+        //            c.clubLogo = "/media/1001/M1.png";
+        //        };
+        //        try
+        //        {
+        //            c.clubImage = this.getImg(club.Properties["clubImage"].Value.ToString());
+        //        }
+        //        catch
+        //        {
+        //            c.clubImage = "/media/1001/M1.png";
+        //        };
+
+        //        return c;
+        //    }
+        //    else
+        //    {
+        //        return new Club();
+        //    }
+        //}
+
+        // GET: Club by club id OK
+        [HttpGet]
         public Club GetClub(int cID)
         {
             var cs = Services.ContentService;
             var club = cs.GetById(cID);
+            List<Sponsor> sponsorlist = new List<Sponsor>();
+            List<Team> teamlist = new List<Team>();
+            
             if (club != null)
             {
                 var c = new Club();
@@ -30,6 +71,9 @@ namespace MOTMUmbracoBackend.Controllers
                 c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
                 c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
                 c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
+                var sponsors = cs.GetById(cID).Descendants().Where(t => t.ContentType.Alias.Equals("sponsor"));
+                var teams = cs.GetById(cID).Descendants().Where(t => t.ContentType.Alias.Equals("team"));
+                //var matches = cs.GetById(cID).Descendants().Where(t => t.ContentType.Alias.Equals("Match"));
                 try
                 {
                     c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
@@ -46,6 +90,55 @@ namespace MOTMUmbracoBackend.Controllers
                 {
                     c.clubImage = "/media/1001/M1.png";
                 };
+
+                foreach (var sponsor in sponsors)
+                {
+                    var s = new Sponsor();
+                    s.sponsorId = sponsor.Id;
+                    s.sponsorName = (sponsor.Properties["sponsorName"].Value != null) ? sponsor.Properties["sponsorName"].Value.ToString() : "No sponsor name found";
+                    s.sponsorAddress = (sponsor.Properties["sponsorAddress"].Value != null) ? sponsor.Properties["sponsorAddress"].Value.ToString() : "No sponsor address found";
+                    try
+                    {
+                        s.sponsorLogo = this.getImg(club.Properties["sponsorLogo"].Value.ToString());
+                    }
+                    catch
+                    {
+                        s.sponsorLogo = "/media/1001/M1.png";
+                    };
+
+                    sponsorlist.Add(s);
+                }
+                c.Sponsors = sponsorlist;
+
+                foreach (var team in teams)
+                {
+                    var t = new Team();
+                    t.teamId = team.Id;
+                    t.teamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+                    List<Match> matchlist = new List<Match>();
+                    var matches = cs.GetById(t.teamId).Descendants().Where(te => te.ContentType.Alias.Equals("match"));
+                    foreach (var match in matches)
+                    {
+                        var m = new Match();
+                        m.matchId = match.Id;
+                        m.matchAddress = (match.Properties["matchAddress"].Value != null) ? match.Properties["matchAddress"].Value.ToString() : "Match Address";
+                        m.matchCity = (match.Properties["matchCity"].Value != null) ? match.Properties["matchCity"].Value.ToString() : "Match City";
+                        m.matchStartDateTime = (match.Properties["matchStartDateTime"].Value != null) ? match.Properties["matchStartDateTime"].Value.ToString() : "Match Start DateTime";
+                        m.opponent = (match.Properties["opponent"].Value != null) ? match.Properties["opponent"].Value.ToString() : "Opponent";
+                        m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
+                        m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
+
+                        var matchStatus = (match.Properties["status"].Value != null) ? match.Properties["status"].Value.ToString() : "Status";
+                        m.status = Umbraco.GetPreValueAsString(int.Parse(matchStatus));
+
+                        matchlist.Add(m);
+                    }
+                    t.teamMatches = matchlist;
+                    teamlist.Add(t);
+
+                }
+                c.Teams = teamlist;
+                //c.Matches = matchlist;
 
                 return c;
             }
