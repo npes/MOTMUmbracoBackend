@@ -82,14 +82,7 @@ namespace MOTMUmbracoBackend.Controllers
                 {
                     c.clubLogo = "/media/1001/M1.png";
                 };
-                try
-                {
-                    c.clubImage = this.getImg(club.Properties["clubImage"].Value.ToString());
-                }
-                catch
-                {
-                    c.clubImage = "/media/1001/M1.png";
-                };
+                
 
                 foreach (var sponsor in sponsors)
                 {
@@ -213,6 +206,7 @@ namespace MOTMUmbracoBackend.Controllers
         {
             var cs = Services.ContentService;
             List<Club> allClubs = new List<Club>();
+            
             var clubs = cs.GetById(rootID).Children();
             foreach (var club in clubs)
             {
@@ -221,6 +215,17 @@ namespace MOTMUmbracoBackend.Controllers
                 c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
                 c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
                 c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
+                c.clubRegion = Umbraco.GetPreValueAsString(int.Parse(club.Properties["clubRegion"].Value.ToString()));
+
+                List<string> templist = new List<String>();
+                var items = club.Properties["clubSports"].Value.ToString().Split(new Char[] { ',' });
+                foreach (var item in items)
+                {                    
+                    int temp = int.Parse(item);
+                    templist.Add(Umbraco.GetPreValueAsString(temp));
+                }
+                c.clubSports = templist;
+
                 try
                 {
                     c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
@@ -229,14 +234,7 @@ namespace MOTMUmbracoBackend.Controllers
                 {
                     c.clubLogo = "/media/1001/M1.png";
                 };
-                try
-                {
-                    c.clubImage = this.getImg(club.Properties["clubImage"].Value.ToString());
-                }
-                catch
-                {
-                    c.clubImage = "/media/1001/M1.png";
-                };
+                
                 allClubs.Add(c);
             }
             return allClubs;
