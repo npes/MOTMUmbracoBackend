@@ -16,45 +16,7 @@ namespace MOTMUmbracoBackend.Controllers
 {
     public class TestApiController : UmbracoApiController
     {
-
-        // GET: Club by club id OK
-        //[HttpGet] 
-        //public Club GetClub(int cID)
-        //{
-        //    var cs = Services.ContentService;
-        //    var club = cs.GetById(cID);
-        //    if (club != null)
-        //    {
-        //        var c = new Club();
-        //        c.clubId = club.Id;
-        //        c.clubName = (club.Properties["clubName"].Value != null) ? club.Properties["clubName"].Value.ToString() : "No club name found";
-        //        c.clubAddress = (club.Properties["clubAddress"].Value != null) ? club.Properties["clubAddress"].Value.ToString() : "No club address found";
-        //        c.clubCity = (club.Properties["clubCity"].Value != null) ? club.Properties["clubCity"].Value.ToString() : "No club city found";
-        //        try
-        //        {
-        //            c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
-        //        }
-        //        catch
-        //        {
-        //            c.clubLogo = "/media/1001/M1.png";
-        //        };
-        //        try
-        //        {
-        //            c.clubImage = this.getImg(club.Properties["clubImage"].Value.ToString());
-        //        }
-        //        catch
-        //        {
-        //            c.clubImage = "/media/1001/M1.png";
-        //        };
-
-        //        return c;
-        //    }
-        //    else
-        //    {
-        //        return new Club();
-        //    }
-        //}
-
+        public string apiUrl = "https://motmapi.nikolajsimonsen.com";
         // GET: Club by club id OK
         [HttpGet]
         public Club GetClub(int cID)
@@ -76,11 +38,11 @@ namespace MOTMUmbracoBackend.Controllers
                 //var matches = cs.GetById(cID).Descendants().Where(t => t.ContentType.Alias.Equals("Match"));
                 try
                 {
-                    c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
+                    c.clubLogo = apiUrl + this.getImg(club.Properties["clubLogo"].Value.ToString());
                 }
                 catch
                 {
-                    c.clubLogo = "/media/1001/M1.png";
+                    c.clubLogo = apiUrl + "/media/1001/M1.png";
                 };
                 
 
@@ -92,11 +54,11 @@ namespace MOTMUmbracoBackend.Controllers
                     s.sponsorAddress = (sponsor.Properties["sponsorAddress"].Value != null) ? sponsor.Properties["sponsorAddress"].Value.ToString() : "No sponsor address found";
                     try
                     {
-                        s.sponsorLogo = this.getImg(club.Properties["sponsorLogo"].Value.ToString());
+                        s.sponsorLogo = apiUrl + this.getImg(club.Properties["sponsorLogo"].Value.ToString());
                     }
                     catch
                     {
-                        s.sponsorLogo = "/media/1001/M1.png";
+                        s.sponsorLogo = apiUrl + "/media/1001/M1.png";
                     };
 
                     sponsorlist.Add(s);
@@ -228,11 +190,11 @@ namespace MOTMUmbracoBackend.Controllers
 
                 try
                 {
-                    c.clubLogo = this.getImg(club.Properties["clubLogo"].Value.ToString());
+                    c.clubLogo = apiUrl + this.getImg(club.Properties["clubLogo"].Value.ToString());
                 }
                 catch
                 {
-                    c.clubLogo = "/media/1001/M1.png";
+                    c.clubLogo = apiUrl + "/media/1001/M1.png";
                 };
                 
                 allClubs.Add(c);
