@@ -79,9 +79,10 @@ namespace MOTMUmbracoBackend.Controllers
                         
                         DateTime startDate = DateTime.Parse(match.Properties["matchStartDateTime"].Value.ToString());
                         string matchDateTime = startDate.ToString("dd. MMMM yyyy", dk);
-                        //string matchDateTime = DateTime.ParseExact(match.Properties["matchStartDateTime"].Value.ToString(), "yy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture).ToString("dd. MMMM, yyyy HH:mm:ss");
+                        
                         var m = new Match();
                         m.matchId = match.Id;
+                        m.matchHomeTeam = t.teamName;
                         m.matchAddress = (match.Properties["matchAddress"].Value != null) ? match.Properties["matchAddress"].Value.ToString() : "Match Address";
                         m.matchCity = (match.Properties["matchCity"].Value != null) ? match.Properties["matchCity"].Value.ToString() : "Match City";
                         m.matchStartDateTime = matchDateTime;

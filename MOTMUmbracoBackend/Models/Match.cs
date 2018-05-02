@@ -9,6 +9,8 @@ namespace MOTMUmbracoBackend.Models
     {
         public int matchId { get; set; }
         public string matchAddress { get; set; }
+
+        public string matchHomeTeam { get; set; }
         public string matchCity { get; set; }
         public string matchStartDateTime { get; set; }
         public string opponent { get; set; }
