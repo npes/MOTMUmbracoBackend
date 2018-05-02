@@ -11,12 +11,14 @@ using System.Net.Http;
 using System.Net;
 using System.Text;
 using MOTMUmbracoBackend.Models;
+using System.Globalization;
 
 namespace MOTMUmbracoBackend.Controllers
 {
     public class TestApiController : UmbracoApiController
     {
         public string apiUrl = "https://motmapi.nikolajsimonsen.com";
+        public CultureInfo dk = new CultureInfo("da-DK");
         // GET: Club by club id OK
         [HttpGet]
         public Club GetClub(int cID)
@@ -74,11 +76,15 @@ namespace MOTMUmbracoBackend.Controllers
                     var matches = cs.GetById(t.teamId).Descendants().Where(te => te.ContentType.Alias.Equals("match"));
                     foreach (var match in matches)
                     {
+                        
+                        DateTime startDate = DateTime.Parse(match.Properties["matchStartDateTime"].Value.ToString());
+                        string matchDateTime = startDate.ToString("dd. MMMM yyyy", dk);
+                        //string matchDateTime = DateTime.ParseExact(match.Properties["matchStartDateTime"].Value.ToString(), "yy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture).ToString("dd. MMMM, yyyy HH:mm:ss");
                         var m = new Match();
                         m.matchId = match.Id;
                         m.matchAddress = (match.Properties["matchAddress"].Value != null) ? match.Properties["matchAddress"].Value.ToString() : "Match Address";
                         m.matchCity = (match.Properties["matchCity"].Value != null) ? match.Properties["matchCity"].Value.ToString() : "Match City";
-                        m.matchStartDateTime = (match.Properties["matchStartDateTime"].Value != null) ? match.Properties["matchStartDateTime"].Value.ToString() : "Match Start DateTime";
+                        m.matchStartDateTime = matchDateTime;
                         m.opponent = (match.Properties["opponent"].Value != null) ? match.Properties["opponent"].Value.ToString() : "Opponent";
                         m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
                         m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
