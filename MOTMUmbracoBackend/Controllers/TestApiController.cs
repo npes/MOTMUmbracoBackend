@@ -17,6 +17,7 @@ namespace MOTMUmbracoBackend.Controllers
     public class TestApiController : UmbracoApiController
     {
         public string apiUrl = "https://motmapi.nikolajsimonsen.com";
+        
         // GET: Club by club id OK
         [HttpGet]
         public Club GetClub(int cID)
@@ -278,6 +279,44 @@ namespace MOTMUmbracoBackend.Controllers
             //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + newTeam.Id.ToString() + " TeamName: " + newTeam.Name);
             //return Request.CreateResponse<String>(HttpStatusCode.OK, (JsonConvert.SerializeObject(createdTeam)));
             return createdTeam;
+        }
+
+        [HttpPost]
+        public Object PostVote([FromBody] Vote vote, int mID)
+        {
+            //string response = "";
+            var cs = Services.ContentService;
+            var matchVotes = cs.GetById(mID).Descendants().Where(t => t.ContentType.Alias.Equals("vote")).ToList();
+            List<Vote> matchVoteList = new List<Vote>();
+            //int _vote = int.Parse(vote.deviceId);
+            string error = "AlreadyVoted";
+
+            foreach (var item in matchVotes)
+            {
+                var v = new Vote();
+                v.deviceId = (item.Properties["deviceId"].Value != null) ? item.Properties["deviceId"].Value.ToString() : "No deviceId found";
+                //v.voteId = item.Id;
+                var playerId = (item.Properties["playerId"].Value != null) ? item.Properties["playerId"].Value.ToString() : "No PlayerId found";
+                v.playerId = int.Parse(playerId);
+                matchVoteList.Add(v);
+            }
+
+
+            if (matchVoteList.All(t => t.deviceId != vote.deviceId))
+            {
+                var newVote = cs.CreateContent(vote.deviceId, mID, "Vote");
+                newVote.SetValue("deviceId", vote.deviceId);
+                newVote.SetValue("playerId", vote.playerId);
+                cs.SaveAndPublishWithStatus(newVote);
+                return newVote;
+            }
+            else
+            {
+                return error;
+            }
+            
+
+
         }
 
         //Update team with team id - OK
