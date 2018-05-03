@@ -18,11 +18,9 @@ namespace MOTMUmbracoBackend.Controllers
     public class TestApiController : UmbracoApiController
     {
         public string apiUrl = "https://motmapi.nikolajsimonsen.com";
-<<<<<<< HEAD
-        
-=======
+
         public CultureInfo dk = new CultureInfo("da-DK");
->>>>>>> d2cf3a79b381ea18ee493e007149ee6eaee4ea34
+
         // GET: Club by club id OK
         [HttpGet]
         public Club GetClub(int cID)
