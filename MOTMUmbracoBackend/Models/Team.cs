@@ -12,5 +12,7 @@ namespace MOTMUmbracoBackend.Models
         public string teamName { get; set; }
         public string teamSport { get; set; }
         public List<Match> teamMatches { get; set; }
+        public List<Sponsor> teamSponsors { get; set; }
+        public List<Player> teamPlayers { get; set; }
     }
 }
