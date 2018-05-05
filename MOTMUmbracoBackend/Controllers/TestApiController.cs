@@ -260,13 +260,13 @@ namespace MOTMUmbracoBackend.Controllers
             return playerlist;
         }
 
-        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        //[Umbraco.Web.WebApi.UmbracoAuthorize]
         public List<Club> GetAllClubs (int rootID)
         {
             var cs = Services.ContentService;
             List<Club> allClubs = new List<Club>();
             
-            var clubs = cs.GetById(rootID).Children();
+            var clubs = cs.GetById(rootID).Children().Where(t => t.ContentType.Alias.Equals("Club")); 
             foreach (var club in clubs)
             {
                 var c = new Club();
