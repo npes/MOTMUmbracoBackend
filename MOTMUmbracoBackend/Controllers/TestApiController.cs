@@ -260,7 +260,7 @@ namespace MOTMUmbracoBackend.Controllers
             return playerlist;
         }
 
-        //[Umbraco.Web.WebApi.UmbracoAuthorize]
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         public List<Club> GetAllClubs (int rootID)
         {
             var cs = Services.ContentService;
