@@ -327,6 +327,7 @@
     <Compile Include="Models\DeviceId.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Sponsor.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\Vote.cs" />

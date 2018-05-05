@@ -12,6 +12,7 @@ using System.Net;
 using System.Text;
 using MOTMUmbracoBackend.Models;
 using System.Globalization;
+using umbraco.MacroEngines;
 
 namespace MOTMUmbracoBackend.Controllers
 {
@@ -201,7 +202,41 @@ namespace MOTMUmbracoBackend.Controllers
                 return teamlist;            
         }
 
+        // Get Players bu match id
+        [HttpGet]
+        public List<Player> GetMatchPlayers(int mID)
+        {
+            var cs = Services.ContentService;
+            List<Player> playerlist = new List<Player>();
+            var match = cs.GetById(mID);
+
+            //var m = new Match();
+            //m.matchId = match.Id;
+            var matchPlayers = this.GetPlayersByGuid(match.Properties["matchPlayers"].Value.ToString());
+
+            foreach (Player player in matchPlayers)
+            {
+                var p = new Player();
+                var t = new Team();
+                var r = cs.GetById(player.playerId);
+                t = GetPlayerTeam(r.Properties["team"].Value.ToString());
+
+                p.playerId = player.playerId;
+                p.playerFirstName = player.playerFirstName;
+                p.playerLastName = player.playerLastName;
+                p.playerNumber = player.playerNumber;
+                p.teamName = t.teamName;
+                p.teamId = t.teamId;
+                p.roleType = this.getPlayerRole(r.Properties["role"].Value.ToString());  
+                playerlist.Add(p);
+            }
+
+            return playerlist;
+        }
+    
+
         // Get players by team id
+        [HttpGet]
         public List<Player> GetTeamPlayers(int cID)
         {
             var cs = Services.ContentService;
@@ -433,6 +468,18 @@ namespace MOTMUmbracoBackend.Controllers
             return Umbraco.Media(img.Id).Url;
         }
 
+        private string getPlayerRole(string roleGuid)
+        {
+            var cs = Services.ContentService;
+            var nodeGuid = Guid.Parse(roleGuid.Substring(15));
+            var nodeId = cs.GetById(nodeGuid);
+
+
+            var roleType = Umbraco.Content(nodeId.Id).Name;
+            
+            return roleType;
+        }
+
         private Team GetPlayerTeam (string contentGuid)
         {
             var cs = Services.ContentService;
@@ -445,6 +492,7 @@ namespace MOTMUmbracoBackend.Controllers
             };
             return team;
         }
+
         private List<Player> GetPlayersByGuid(string guidString)
         {
             var cs = Services.ContentService;
@@ -463,18 +511,7 @@ namespace MOTMUmbracoBackend.Controllers
                 p.playerFirstName = (teamPlayer.Properties["playerFirstName"].Value != null) ? teamPlayer.Properties["playerFirstName"].Value.ToString() : "Player first name";
                 p.playerLastName = (teamPlayer.Properties["playerLastName"].Value != null) ? teamPlayer.Properties["playerLastName"].Value.ToString() : "Player last name";
                 p.playerNumber = (teamPlayer.Properties["playerNumber"].Value != null) ? int.Parse(teamPlayer.Properties["playerNumber"].Value.ToString()) : 0;
-                //try
-                //{
-                  //  s.Picture = this.getImg(sessionSpeaker.Properties["speakerPicture"].Value.ToString());
-                //}
-                //catch
-                //{
-                 //   s.Picture = "/media/1002/cg-placeholder.svg";
-                //};
-
-
-
-
+                
                 players.Add(p);
             }
 
