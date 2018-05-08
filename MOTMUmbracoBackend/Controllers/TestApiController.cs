@@ -347,6 +347,25 @@ namespace MOTMUmbracoBackend.Controllers
             return matchlist;
         }
 
+        [HttpGet]
+        public List<Vote> GetMatchVotes(int mID)
+        {
+            List<Vote> matchVotes = new List<Vote>();
+            var cs = Services.ContentService;
+            var votes = cs.GetById(mID).Children();
+            foreach (var item in votes)
+            {
+                var v = new Vote();
+                v.voteId = item.Id;
+                v.deviceId = (item.Properties["deviceId"].Value != null) ? item.Properties["deviceId"].Value.ToString() : "No device id found";
+                var playerId = (item.Properties["playerId"].Value != null) ? item.Properties["playerId"].Value.ToString() : "No PlayerId found";
+                v.playerId = int.Parse(playerId);
+                matchVotes.Add(v);
+            }
+
+            return matchVotes;
+        }
+
         //POST METHODS
 
         //Post Club
@@ -377,14 +396,16 @@ namespace MOTMUmbracoBackend.Controllers
             return createdTeam;
         }
 
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
-        public Object PostVote([FromBody] Vote vote, int mID)
+        public Vote PostVote([FromBody] Vote vote, int mID)
         {
             //string response = "";
             var cs = Services.ContentService;
             var matchVotes = cs.GetById(mID).Descendants().Where(t => t.ContentType.Alias.Equals("vote")).ToList();
             List<Vote> matchVoteList = new List<Vote>();
             //int _vote = int.Parse(vote.deviceId);
+            Vote response = new Vote();
             string error = "AlreadyVoted";
 
             foreach (var item in matchVotes)
@@ -404,11 +425,18 @@ namespace MOTMUmbracoBackend.Controllers
                 newVote.SetValue("deviceId", vote.deviceId);
                 newVote.SetValue("playerId", vote.playerId);
                 cs.SaveAndPublishWithStatus(newVote);
-                return newVote;
+                response.deviceId = newVote.Properties["deviceId"].Value.ToString();
+                var playerId = newVote.Properties["playerId"].Value.ToString();
+                response.playerId = int.Parse(playerId);
+                response.voteId = newVote.Id;
+                return response;
             }
             else
             {
-                return error;
+                response.deviceId = "0";
+                response.playerId = 0;
+                response.voteId = 0;
+                return response;
             }
             
 
