@@ -13,6 +13,7 @@ using System.Text;
 using MOTMUmbracoBackend.Models;
 using System.Globalization;
 using umbraco.MacroEngines;
+using Umbraco.Core;
 
 namespace MOTMUmbracoBackend.Controllers
 {
@@ -396,31 +397,36 @@ namespace MOTMUmbracoBackend.Controllers
             return createdTeam;
         }
 
-        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        //[Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
         public Vote PostVote([FromBody] Vote vote, int mID)
         {
             //string response = "";
             var cs = Services.ContentService;
-            var matchVotes = cs.GetById(mID).Descendants().Where(t => t.ContentType.Alias.Equals("vote")).ToList();
-            List<Vote> matchVoteList = new List<Vote>();
+            //var matchVotes = cs.GetById(mID).Descendants().Where(t => t.ContentType.Alias.Equals("vote")).ToList();
+            //List<Vote> matchVoteList = new List<Vote>();
+            List<Vote> matchVoteList = this.GetMatchVotes(mID);
             //int _vote = int.Parse(vote.deviceId);
             Vote response = new Vote();
-            string error = "AlreadyVoted";
+            //Vote presentVote = new Vote();
+            //string error = "AlreadyVoted";
 
-            foreach (var item in matchVotes)
-            {
-                var v = new Vote();
-                v.deviceId = (item.Properties["deviceId"].Value != null) ? item.Properties["deviceId"].Value.ToString() : "No deviceId found";
-                //v.voteId = item.Id;
-                var playerId = (item.Properties["playerId"].Value != null) ? item.Properties["playerId"].Value.ToString() : "No PlayerId found";
-                v.playerId = int.Parse(playerId);
-                matchVoteList.Add(v);
-            }
+            //foreach (var item in matchVotes)
+            //{
+            //    var v = new Vote();
+            //    v.deviceId = (item.Properties["deviceId"].Value != null) ? item.Properties["deviceId"].Value.ToString() : "No deviceId found";
+            //    //v.voteId = item.Id;
+            //    var playerId = (item.Properties["playerId"].Value != null) ? item.Properties["playerId"].Value.ToString() : "No PlayerId found";
+            //    v.playerId = int.Parse(playerId);
+            //    //var voteId = (item.Properties["voteId"].Value != null) ? item.Properties["voteId"].Value.ToString() : "No VoteId found";
+            //    v.voteId = item.Id;
+            //    matchVoteList.Add(v);
+            //}
 
 
             if (matchVoteList.All(t => t.deviceId != vote.deviceId))
             {
+                //return created vote
                 var newVote = cs.CreateContent(vote.deviceId, mID, "Vote");
                 newVote.SetValue("deviceId", vote.deviceId);
                 newVote.SetValue("playerId", vote.playerId);
@@ -433,14 +439,25 @@ namespace MOTMUmbracoBackend.Controllers
             }
             else
             {
-                response.deviceId = "0";
-                response.playerId = 0;
-                response.voteId = 0;
+                //return present vote if device already voted
+                int presentVoteIndex = matchVoteList.FindIndex(v => v.deviceId == vote.deviceId);
+                response.deviceId = matchVoteList[presentVoteIndex].deviceId;
+                response.playerId = matchVoteList[presentVoteIndex].playerId;
+                response.voteId = matchVoteList[presentVoteIndex].voteId;
                 return response;
             }
-            
+        }
 
-
+        [HttpPut]
+        public object UpdateVote([FromBody] Vote vote, int vID)
+        {
+            var cs = Services.ContentService;
+            Vote response = new Vote();
+            var currentVote = cs.GetById(vID);
+            //currentVote.SetValue("deviceId", vote.deviceId);
+            currentVote.SetValue("playerId", vote.playerId);
+            cs.SaveAndPublishWithStatus(currentVote);
+            return currentVote;
         }
 
         //Update team with team id - OK
