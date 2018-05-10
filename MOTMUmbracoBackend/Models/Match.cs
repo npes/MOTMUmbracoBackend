@@ -18,5 +18,7 @@ namespace MOTMUmbracoBackend.Models
         public int homeGoal { get; set; }
         public int opponentGoal { get; set; }
         public List<Player> matchPlayers { get; set; }
+        public List<Sponsor> matchSponsors { get; set; }
+
     }
 }
