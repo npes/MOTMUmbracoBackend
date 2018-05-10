@@ -397,7 +397,7 @@ namespace MOTMUmbracoBackend.Controllers
             return createdTeam;
         }
 
-        //[Umbraco.Web.WebApi.UmbracoAuthorize]
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
         public Vote PostVote([FromBody] Vote vote, int mID)
         {
@@ -448,6 +448,7 @@ namespace MOTMUmbracoBackend.Controllers
             }
         }
 
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPut]
         public object UpdateVote([FromBody] Vote vote, int vID)
         {
