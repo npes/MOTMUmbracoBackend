@@ -51,7 +51,15 @@ namespace MOTMUmbracoBackend.Controllers
                 {
                     c.clubLogo = apiUrl + "/media/1001/M1.png";
                 };
-                
+
+                List<string> templist = new List<String>();
+                var items = club.Properties["clubSports"].Value.ToString().Split(new Char[] { ',' });
+                foreach (var item in items)
+                {
+                    int temp = int.Parse(item);
+                    templist.Add(Umbraco.GetPreValueAsString(temp));
+                }
+                c.clubSports = templist;
 
                 foreach (var sponsor in sponsors)
                 {
