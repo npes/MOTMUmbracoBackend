@@ -237,6 +237,69 @@ namespace MOTMUmbracoBackend.Controllers
 
             return playerlist;
         }
+
+        //Get match by id
+        [HttpGet]
+        public Match GetMatchByID(int mID)
+        {
+            var cs = Services.ContentService;
+            List<Sponsor> sponsorlist = new List<Sponsor>();
+            var match = cs.GetById(mID);
+            int parentID = cs.GetById(mID).ParentId;
+            int parentTeamsID = cs.GetById(parentID).ParentId;
+            var team = cs.GetById(parentTeamsID);
+
+            int parentClubsID = cs.GetById(parentTeamsID).ParentId;
+            int parentClubID = cs.GetById(parentClubsID).ParentId;
+
+            var sponsors = cs.GetById(parentClubID).Descendants().Where(sp => sp.ContentType.Alias.Equals("sponsor"));
+
+            if (match != null)
+            {
+                var teamName = (team.Properties["teamName"].Value != null) ? team.Properties["teamName"].Value.ToString() : "Team name";
+
+                DateTime startDate = DateTime.Parse(match.Properties["matchStartDateTime"].Value.ToString());
+                string matchDateTime = startDate.ToString("dd. MMMM yyyy", dk);
+
+                var m = new Match();
+                m.matchId = match.Id;
+                m.matchHomeTeam = teamName;
+                m.matchAddress = (match.Properties["matchAddress"].Value != null) ? match.Properties["matchAddress"].Value.ToString() : "Match Address";
+                m.matchCity = (match.Properties["matchCity"].Value != null) ? match.Properties["matchCity"].Value.ToString() : "Match City";
+                m.matchStartDateTime = matchDateTime;
+                m.opponent = (match.Properties["opponent"].Value != null) ? match.Properties["opponent"].Value.ToString() : "Opponent";
+                m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
+                m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
+
+                var matchStatus = (match.Properties["status"].Value != null) ? match.Properties["status"].Value.ToString() : "Status";
+                m.status = Umbraco.GetPreValueAsString(int.Parse(matchStatus));
+
+                foreach (var sponsor in sponsors)
+                {
+                    var s = new Sponsor();
+                    s.sponsorId = sponsor.Id;
+                    s.sponsorName = (sponsor.Properties["sponsorName"].Value != null) ? sponsor.Properties["sponsorName"].Value.ToString() : "No sponsor name found";
+                    s.sponsorAddress = (sponsor.Properties["sponsorAddress"].Value != null) ? sponsor.Properties["sponsorAddress"].Value.ToString() : "No sponsor address found";
+                    try
+                    {
+                        s.sponsorLogo = apiUrl + this.getImg(sponsor.Properties["sponsorLogo"].Value.ToString());
+                    }
+                    catch
+                    {
+                        s.sponsorLogo = apiUrl + "/media/1001/M1.png";
+                    };
+
+                    sponsorlist.Add(s);
+                }
+                m.matchSponsors = sponsorlist;
+
+                return m;
+            }
+            else
+            {
+                return new Match();
+            }
+        }
     
 
         // Get players by team id
