@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -115,6 +116,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         //GET: Team by team id OK
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         public Team GetTeam(int tID)
         {
             var cs = Services.ContentService;
@@ -184,6 +186,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         // Get all teams from club by club id OK
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         public List<Team> GetTeams(int cID)
         {
             var cs = Services.ContentService;
@@ -370,6 +373,7 @@ namespace MOTMUmbracoBackend.Controllers
         //POST METHODS
 
         //Post Club
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpPost]
         public void PostClub(String club)
         {
@@ -401,28 +405,9 @@ namespace MOTMUmbracoBackend.Controllers
         [HttpPost]
         public Vote PostVote([FromBody] Vote vote, int mID)
         {
-            //string response = "";
             var cs = Services.ContentService;
-            //var matchVotes = cs.GetById(mID).Descendants().Where(t => t.ContentType.Alias.Equals("vote")).ToList();
-            //List<Vote> matchVoteList = new List<Vote>();
             List<Vote> matchVoteList = this.GetMatchVotes(mID);
-            //int _vote = int.Parse(vote.deviceId);
             Vote response = new Vote();
-            //Vote presentVote = new Vote();
-            //string error = "AlreadyVoted";
-
-            //foreach (var item in matchVotes)
-            //{
-            //    var v = new Vote();
-            //    v.deviceId = (item.Properties["deviceId"].Value != null) ? item.Properties["deviceId"].Value.ToString() : "No deviceId found";
-            //    //v.voteId = item.Id;
-            //    var playerId = (item.Properties["playerId"].Value != null) ? item.Properties["playerId"].Value.ToString() : "No PlayerId found";
-            //    v.playerId = int.Parse(playerId);
-            //    //var voteId = (item.Properties["voteId"].Value != null) ? item.Properties["voteId"].Value.ToString() : "No VoteId found";
-            //    v.voteId = item.Id;
-            //    matchVoteList.Add(v);
-            //}
-
 
             if (matchVoteList.All(t => t.deviceId != vote.deviceId))
             {
@@ -489,19 +474,45 @@ namespace MOTMUmbracoBackend.Controllers
             var cs = Services.ContentService;
             var currentTeam = cs.GetById(tID);
             cs.MoveToRecycleBin(currentTeam);
-            //cs.SaveAndPublishWithStatus(currentTeam);
-
-            //Team updatedTeam = new Team
-            //{
-            //    TeamId = currentTeam.Id,
-            //    TeamName = currentTeam.Name
-            //};
-
-            //return Request.CreateResponse<string>(HttpStatusCode.OK, "Id: " + currentTeam.Id.ToString() + " TeamName: " + currentTeam.Name);
             return currentTeam;
         }
 
+        //ADMIN METHODS
+
+        //Returns "Message": "Authorization has been denied for this request." if error in token. http status 401 "Authorization denied"
+        //Returns null in all values if error in admin email. http status 200 "Ok"
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpPut]
+        public Admin FindAdminClub([FromBody] Admin receivedAdmin)
+        {
+            Admin admin = new Admin();
+            var us = Services.UserService;
+            var foundUser = us.GetByEmail(receivedAdmin.Username);
+            admin.ClubId = 0;
+            if (foundUser != null)
+            {
+                var groups = foundUser.Groups;
+                if (groups.Count() != 0)
+                {
+                    foreach (var item in groups)
+                    {
+                        admin.UserGroup = item.Name;
+                        admin.ClubId = int.Parse(item.StartContentId.ToString());
+                        admin.Username = foundUser.Username;
+                        admin.UserFriendlyName = foundUser.Name;
+                        admin.Password = receivedAdmin.Password;
+                    }
+                }
+            }
+            return admin;
+        }
+
         //HELPER METHODS
+        public class AdminClub
+        {
+            public int ClubId { get; set; }
+        }
+        
 
         private string getImg(string guidString)
         {
