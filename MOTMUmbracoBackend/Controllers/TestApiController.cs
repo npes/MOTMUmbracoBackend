@@ -25,6 +25,7 @@ namespace MOTMUmbracoBackend.Controllers
         public CultureInfo dk = new CultureInfo("da-DK");
 
         // GET: Club by club id OK
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpGet]
         public Club GetClub(int cID)
         {
@@ -249,7 +250,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         //Get match by id
-        
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpGet]
         public Match GetMatchByID(int mID)
         {
@@ -282,7 +283,7 @@ namespace MOTMUmbracoBackend.Controllers
                 m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
                 m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
                 m.manOfTheMatch = (match.Properties["manOfTheMatch"].Value != null) ? match.Properties["manOfTheMatch"].Value.ToString() : "manOfTheMatch";
-
+                var temp = (match.Properties["status"]);
                 var matchStatus = (match.Properties["status"].Value != null) ? match.Properties["status"].Value.ToString() : "Status";
                 m.status = Umbraco.GetPreValueAsString(int.Parse(matchStatus));
 
@@ -312,9 +313,9 @@ namespace MOTMUmbracoBackend.Controllers
                 return new Match();
             }
         }
-    
 
         // Get players by team id
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpGet]
         public List<Player> GetTeamPlayers(int cID)
         {
@@ -340,6 +341,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpGet]
         public List<Club> GetAllClubs (int rootID)
         {
             var cs = Services.ContentService;
@@ -378,6 +380,8 @@ namespace MOTMUmbracoBackend.Controllers
             return allClubs;
         }
         //get all teams by sport with currentmatches
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpGet]
         public List<Team> GetTeamsBySport(int rootID)
         {
             var cs = Services.ContentService;
@@ -400,6 +404,8 @@ namespace MOTMUmbracoBackend.Controllers
             return allTeams;
         }
         //Get matches by team ID
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpGet]
         public List<Match> GetMatchByTeamID(int tID)
         {
             var cs = Services.ContentService;
@@ -426,6 +432,7 @@ namespace MOTMUmbracoBackend.Controllers
             return matchlist;
         }
 
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpGet]
         public List<Vote> GetMatchVotes(int mID)
         {
@@ -446,6 +453,48 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         //POST METHODS
+
+        //Update Match
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpPut]
+        public Match UpdateMatchById([FromBody] Match match, int mID)
+        {
+            var cs = Services.ContentService;
+            var MOTM = match.manOfTheMatch;
+            //var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("Status");
+            string matchStatusValue = "";
+            switch (match.status)
+            {
+                case "Coming":
+                    matchStatusValue = "27";
+                    break;
+                case "Current":
+                    matchStatusValue = "28";
+                    break;
+                case "Finished":
+                    matchStatusValue = "29";
+                    List<Vote> matchVotes = GetMatchVotes(mID);
+                    var most = matchVotes.GroupBy(i => i.playerId).OrderByDescending(grp => grp.Count())
+                        .Select(grp => grp.Key).First();
+                    var _MOTM = cs.GetById(most);
+                    MOTM = _MOTM.Name;
+                    break;
+                default:
+                    break;
+            }
+
+            Match response = new Match();
+            var currentMatch = cs.GetById(mID);
+            var temp = currentMatch.Properties["status"].Value;
+            //var preValuesFromDataType = umbraco.library.GetPreValues(GetType(temp));
+            var temp2 = currentMatch.PropertyTypes;
+            currentMatch.SetValue("homeGoal", match.homeGoal);
+            currentMatch.SetValue("opponentGoal", match.opponentGoal);
+            currentMatch.SetValue("status", matchStatusValue);
+            currentMatch.SetValue("manOfTheMatch", MOTM);
+            var tempresponse = cs.SaveAndPublishWithStatus(currentMatch);
+            return response = GetMatchByID(mID);
+        }
 
         //Post Club
         [Umbraco.Web.WebApi.UmbracoAuthorize]
@@ -515,7 +564,7 @@ namespace MOTMUmbracoBackend.Controllers
             var cs = Services.ContentService;
             Vote response = new Vote();
             var currentVote = cs.GetById(vID);
-            //currentVote.SetValue("deviceId", vote.deviceId);
+            currentVote.SetValue("deviceId", vote.deviceId);
             currentVote.SetValue("playerId", vote.playerId);
             cs.SaveAndPublishWithStatus(currentVote);
             return currentVote;
@@ -583,12 +632,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         //HELPER METHODS
-        public class AdminClub
-        {
-            public int ClubId { get; set; }
-        }
         
-
         private string getImg(string guidString)
         {
             var ms = Services.MediaService;
