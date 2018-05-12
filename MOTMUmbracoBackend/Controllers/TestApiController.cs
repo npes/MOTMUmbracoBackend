@@ -195,6 +195,7 @@ namespace MOTMUmbracoBackend.Controllers
 
         // Get all teams from club by club id OK
         [Umbraco.Web.WebApi.UmbracoAuthorize]
+        [HttpGet]
         public List<Team> GetTeams(int cID)
         {
             var cs = Services.ContentService;
@@ -214,7 +215,8 @@ namespace MOTMUmbracoBackend.Controllers
                 return teamlist;            
         }
 
-        // Get Players bu match id
+        // Get Players by match id
+        [Umbraco.Web.WebApi.UmbracoAuthorize]
         [HttpGet]
         public List<Player> GetMatchPlayers(int mID)
         {
@@ -247,6 +249,7 @@ namespace MOTMUmbracoBackend.Controllers
         }
 
         //Get match by id
+        
         [HttpGet]
         public Match GetMatchByID(int mID)
         {
@@ -278,6 +281,7 @@ namespace MOTMUmbracoBackend.Controllers
                 m.opponent = (match.Properties["opponent"].Value != null) ? match.Properties["opponent"].Value.ToString() : "Opponent";
                 m.homeGoal = int.Parse((match.Properties["homeGoal"].Value != null) ? match.Properties["homeGoal"].Value.ToString() : "0");
                 m.opponentGoal = int.Parse((match.Properties["opponentGoal"].Value != null) ? match.Properties["opponentGoal"].Value.ToString() : "0");
+                m.manOfTheMatch = (match.Properties["manOfTheMatch"].Value != null) ? match.Properties["manOfTheMatch"].Value.ToString() : "manOfTheMatch";
 
                 var matchStatus = (match.Properties["status"].Value != null) ? match.Properties["status"].Value.ToString() : "Status";
                 m.status = Umbraco.GetPreValueAsString(int.Parse(matchStatus));

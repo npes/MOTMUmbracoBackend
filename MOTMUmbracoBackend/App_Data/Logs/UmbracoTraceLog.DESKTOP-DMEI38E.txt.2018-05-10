@@ -1,0 +1,467 @@
+﻿ 2018-05-10 18:50:43,335 [P7912/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.10.1 application starting on DESKTOP-DMEI38E
+ 2018-05-10 18:50:43,367 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2018-05-10 18:50:43,376 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 9ms)
+ 2018-05-10 18:50:43,449 [P7912/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2018-05-10 18:50:43,450 [P7912/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2018-05-10 18:50:43,452 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:50:43,832 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 380ms)
+ 2018-05-10 18:50:43,832 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2018-05-10 18:50:43,858 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 25ms)
+ 2018-05-10 18:50:43,872 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:50:43,873 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:50:43,873 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2018-05-10 18:50:43,881 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 8ms)
+ 2018-05-10 18:50:43,883 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:50:43,884 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:50:43,884 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2018-05-10 18:50:43,891 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 7ms)
+ 2018-05-10 18:50:43,912 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:50:43,912 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:50:43,913 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2018-05-10 18:50:43,922 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 8ms)
+ 2018-05-10 18:50:43,922 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:50:43,923 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:50:43,923 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2018-05-10 18:50:43,933 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 10ms)
+ 2018-05-10 18:50:46,928 [P7912/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2018-05-10 18:50:47,207 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Models.PublishedContent.PublishedContentModel
+ 2018-05-10 18:50:47,216 [P7912/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Models.PublishedContent.PublishedContentModel (took 9ms)
+ 2018-05-10 18:50:47,284 [P7912/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2018-05-10 18:50:47,582 [P7912/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2018-05-10 18:50:47,582 [P7912/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2018-05-10 18:50:47,602 [P7912/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4392ms)
+ 2018-05-10 18:50:47,605 [P7912/D2/T1] INFO  Umbraco.Web.ExamineStartup - Forcing index InternalIndexSet to be unlocked since it was left in a locked state
+ 2018-05-10 18:50:47,606 [P7912/D2/T1] INFO  Umbraco.Web.ExamineStartup - Forcing index ExternalIndexSet to be unlocked since it was left in a locked state
+ 2018-05-10 18:50:48,045 [P7912/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:6801/umbraco
+ 2018-05-10 18:50:48,046 [P7912/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:6801/umbraco (UmbracoModule request)
+ 2018-05-10 18:50:48,525 [P7912/D2/T10] INFO  umbraco.content - Load Xml from file...
+ 2018-05-10 18:50:48,530 [P7912/D2/T10] INFO  umbraco.content - Loaded Xml from file.
+ 2018-05-10 18:50:51,416 [P7912/D2/T10] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2018-05-10 18:51:12,010 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:51:12,011 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:51:12,011 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-05-10 18:51:12,020 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 9ms)
+ 2018-05-10 18:51:13,763 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:51:13,763 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:51:13,763 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2018-05-10 18:51:13,770 [P7912/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 7ms)
+ 2018-05-10 18:52:05,891 [P16376/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.10.1 application starting on DESKTOP-DMEI38E
+ 2018-05-10 18:52:05,911 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2018-05-10 18:52:05,931 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 19ms)
+ 2018-05-10 18:52:06,002 [P16376/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2018-05-10 18:52:06,004 [P16376/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2018-05-10 18:52:06,006 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:06,324 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 318ms)
+ 2018-05-10 18:52:06,324 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2018-05-10 18:52:06,330 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 6ms)
+ 2018-05-10 18:52:06,346 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:06,346 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:06,347 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2018-05-10 18:52:06,353 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 6ms)
+ 2018-05-10 18:52:06,354 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:06,354 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:06,354 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2018-05-10 18:52:06,360 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 5ms)
+ 2018-05-10 18:52:06,378 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:06,378 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:06,378 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2018-05-10 18:52:06,385 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 6ms)
+ 2018-05-10 18:52:06,386 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:06,386 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:06,386 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2018-05-10 18:52:06,396 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 10ms)
+ 2018-05-10 18:52:08,321 [P16376/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2018-05-10 18:52:08,592 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Models.PublishedContent.PublishedContentModel
+ 2018-05-10 18:52:08,601 [P16376/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Models.PublishedContent.PublishedContentModel (took 9ms)
+ 2018-05-10 18:52:08,674 [P16376/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2018-05-10 18:52:08,964 [P16376/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2018-05-10 18:52:08,965 [P16376/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2018-05-10 18:52:08,975 [P16376/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3165ms)
+ 2018-05-10 18:52:09,322 [P16376/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:6801/umbraco
+ 2018-05-10 18:52:09,324 [P16376/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:6801/umbraco (UmbracoModule request)
+ 2018-05-10 18:52:09,694 [P16376/D2/T10] INFO  umbraco.content - Load Xml from file...
+ 2018-05-10 18:52:09,698 [P16376/D2/T10] INFO  umbraco.content - Loaded Xml from file.
+ 2018-05-10 18:52:12,253 [P16376/D2/T10] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2018-05-10 18:52:52,996 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:52,996 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:52,996 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-05-10 18:52:53,002 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 5ms)
+ 2018-05-10 18:52:53,621 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:52:53,621 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:52:53,621 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2018-05-10 18:52:53,628 [P16376/D2/T10] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 6ms)
+ 2018-05-10 18:53:09,849 [P16376/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 18:53:09,850 [P16376/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 18:53:09,850 [P16376/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.ICacheRefresher
+ 2018-05-10 18:53:09,858 [P16376/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.ICacheRefresher (took 8ms)
+ 2018-05-10 18:53:10,337 [P16376/D2/T11] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1219 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:10,345 [P16376/D2/T11] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 454, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:10,348 [P16376/D2/T11] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:15,666 [P16376/D2/T12] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1219 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:15,667 [P16376/D2/T12] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 455, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:15,668 [P16376/D2/T12] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:21,186 [P16376/D2/T11] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1219 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:21,187 [P16376/D2/T11] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 456, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:21,187 [P16376/D2/T11] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:26,508 [P16376/D2/T12] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1219 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:26,509 [P16376/D2/T12] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 457, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:26,509 [P16376/D2/T12] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:32,027 [P16376/D2/T11] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1219 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:32,028 [P16376/D2/T11] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 458, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:32,028 [P16376/D2/T11] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:37,393 [P16376/D2/T11] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1220 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:37,394 [P16376/D2/T11] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 459, instruction count: 1). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:37,394 [P16376/D2/T11] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:42,939 [P16376/D2/T10] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1218 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:42,940 [P16376/D2/T10] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 460, instruction count: 2). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:42,940 [P16376/D2/T10] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 18:53:48,300 [P16376/D2/T10] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - Error executing query SELECT versionId FROM cmsDocument where nodeid=1221 AND newest = 1 ORDER BY updateDate desc
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ 2018-05-10 18:53:48,301 [P16376/D2/T10] ERROR Umbraco.Core.Sync.DatabaseServerMessenger - DISTRIBUTED CACHE IS NOT UPDATED. Failed to execute instructions (id: 461, instruction count: 1). Instruction is being skipped/ignored
+umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> MySql.Data.MySqlClient.MySqlException: Table 'nikolajsimonsen_com_db2.CMSDOCUMENT' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction trx, String commandText, MySqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteReader(String commandText, MySqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.Content.get_Version()
+   at umbraco.cms.businesslogic.web.Document.setupNode()
+   at umbraco.cms.businesslogic.CMSNode..ctor(Int32 Id)
+   at umbraco.content.UpdateDocumentCache(Int32 pageId)
+   at Umbraco.Web.Cache.PageCacheRefresher.Refresh(Int32 id)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.RefreshByIds(Guid uniqueIdentifier, String jsonIds)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.NotifyRefreshers(IEnumerable`1 instructions, HashSet`1 processed)
+   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions(IReadOnlyCollection`1 instructionBatch, CacheInstructionDto dto, HashSet`1 processed, Int32& lastId)
+ 2018-05-10 18:53:48,301 [P16376/D2/T10] INFO  Umbraco.Core.Sync.DatabaseServerMessenger - The current batch of instructions was not processed, app is shutting down
+ 2018-05-10 19:07:29,361 [P13704/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.10.1 application starting on DESKTOP-DMEI38E
+ 2018-05-10 19:07:29,382 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2018-05-10 19:07:29,401 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 19ms)
+ 2018-05-10 19:07:29,487 [P13704/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2018-05-10 19:07:29,488 [P13704/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2018-05-10 19:07:29,490 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:29,816 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 325ms)
+ 2018-05-10 19:07:29,816 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2018-05-10 19:07:29,835 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 18ms)
+ 2018-05-10 19:07:29,855 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:29,855 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:29,855 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2018-05-10 19:07:29,863 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 7ms)
+ 2018-05-10 19:07:29,863 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:29,864 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:29,864 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2018-05-10 19:07:29,875 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 11ms)
+ 2018-05-10 19:07:29,898 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:29,898 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:29,898 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2018-05-10 19:07:29,903 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 5ms)
+ 2018-05-10 19:07:29,904 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:29,904 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:29,904 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2018-05-10 19:07:29,911 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 6ms)
+ 2018-05-10 19:07:31,911 [P13704/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2018-05-10 19:07:32,209 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Models.PublishedContent.PublishedContentModel
+ 2018-05-10 19:07:32,220 [P13704/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Models.PublishedContent.PublishedContentModel (took 10ms)
+ 2018-05-10 19:07:32,291 [P13704/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2018-05-10 19:07:32,755 [P13704/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2018-05-10 19:07:32,756 [P13704/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2018-05-10 19:07:32,792 [P13704/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3510ms)
+ 2018-05-10 19:07:32,795 [P13704/D2/T1] INFO  Umbraco.Web.ExamineStartup - Forcing index InternalIndexSet to be unlocked since it was left in a locked state
+ 2018-05-10 19:07:33,154 [P13704/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:6801/umbraco
+ 2018-05-10 19:07:33,156 [P13704/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:6801/umbraco (UmbracoModule request)
+ 2018-05-10 19:07:33,578 [P13704/D2/T10] INFO  umbraco.content - Load Xml from file...
+ 2018-05-10 19:07:33,583 [P13704/D2/T10] INFO  umbraco.content - Loaded Xml from file.
+ 2018-05-10 19:07:36,345 [P13704/D2/T10] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2018-05-10 19:07:40,601 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:40,602 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:40,602 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-05-10 19:07:40,609 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 6ms)
+ 2018-05-10 19:07:41,495 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:07:41,495 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:07:41,495 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2018-05-10 19:07:41,502 [P13704/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 6ms)
+ 2018-05-10 19:08:42,683 [P9604/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.10.1 application starting on DESKTOP-DMEI38E
+ 2018-05-10 19:08:42,704 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2018-05-10 19:08:42,728 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 24ms)
+ 2018-05-10 19:08:42,859 [P9604/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2018-05-10 19:08:42,861 [P9604/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2018-05-10 19:08:42,863 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:43,242 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 379ms)
+ 2018-05-10 19:08:43,242 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2018-05-10 19:08:43,254 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 11ms)
+ 2018-05-10 19:08:43,273 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:43,274 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:43,274 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2018-05-10 19:08:43,280 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 5ms)
+ 2018-05-10 19:08:43,280 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:43,281 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:43,281 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2018-05-10 19:08:43,294 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 12ms)
+ 2018-05-10 19:08:43,313 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:43,313 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:43,313 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2018-05-10 19:08:43,349 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 35ms)
+ 2018-05-10 19:08:43,350 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:43,350 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:43,350 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2018-05-10 19:08:43,356 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 6ms)
+ 2018-05-10 19:08:45,490 [P9604/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2018-05-10 19:08:45,772 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Models.PublishedContent.PublishedContentModel
+ 2018-05-10 19:08:45,781 [P9604/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Models.PublishedContent.PublishedContentModel (took 8ms)
+ 2018-05-10 19:08:45,872 [P9604/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2018-05-10 19:08:46,189 [P9604/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2018-05-10 19:08:46,190 [P9604/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2018-05-10 19:08:46,201 [P9604/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3592ms)
+ 2018-05-10 19:08:46,577 [P9604/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:6801/umbraco
+ 2018-05-10 19:08:46,578 [P9604/D2/T10] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:6801/umbraco (UmbracoModule request)
+ 2018-05-10 19:08:46,981 [P9604/D2/T10] INFO  umbraco.content - Load Xml from file...
+ 2018-05-10 19:08:46,983 [P9604/D2/T10] INFO  umbraco.content - Loaded Xml from file.
+ 2018-05-10 19:08:49,813 [P9604/D2/T10] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2018-05-10 19:08:57,000 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:57,001 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:57,001 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-05-10 19:08:57,004 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 3ms)
+ 2018-05-10 19:08:57,821 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-05-10 19:08:57,821 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-05-10 19:08:57,821 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2018-05-10 19:08:57,829 [P9604/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 8ms)
